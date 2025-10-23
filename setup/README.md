@@ -41,8 +41,5 @@ You can alter the default username, password, and database name in the script pr
 If you run it and then alter it you will manually need to remove the previous user and database.
 
 
-# DuckDNS
-Update DuckDNS script and add Cronjob using command
-```
-crontab -e
-```
+# DuckDNS or other dynamic DNS
+I have used DuckDNS in the past, follow their instructions to set it up with a cronjob.
