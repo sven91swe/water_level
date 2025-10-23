@@ -37,7 +37,8 @@ Change to or stay in folder waterlevel/setup. Run
 bash setup_database.sh
 ```
 
-There is no protection against causing trouble by running this twice. So make sure to just run it once.
+You can alter the default username, password, and database name in the script prior to running it. 
+If you run it and then alter it you will manually need to remove the previous user and database.
 
 
 # DuckDNS

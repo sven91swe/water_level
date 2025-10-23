@@ -12,4 +12,4 @@ printf "<?php \n\$db_user = \"%s\";\n\$db_password = \"%s\";\n\$db_name = \"%s\"
 sudo mysql -e "CREATE DATABASE IF NOT EXISTS $database"
 sudo mysql -e "GRANT ALL ON $database.* TO '$username'@'localhost' IDENTIFIED BY '$password';"
 
-mysql --user=$username --password=$password $database -e "CREATE TABLE data (id int NOT NULL AUTO_INCREMENT, value int, time datetime, PRIMARY KEY (id));"
+mysql --user=$username --password=$password $database -e "CREATE TABLE IF NOT EXISTS data (id int NOT NULL AUTO_INCREMENT, value int, time datetime, PRIMARY KEY (id));"
