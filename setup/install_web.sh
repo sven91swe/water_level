@@ -5,7 +5,7 @@
 
 sudo rm -r /var/www
 sudo mkdir /var/www
-cd ../python_code
+cd ../php_code
 sudo ln -s `pwd` /var/www/html
 cd -
 
