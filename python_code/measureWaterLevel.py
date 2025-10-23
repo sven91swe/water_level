@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 
-import serial
 import numpy as np
-from datetime import timedelta
-from datetime import datetime
+from datetime import datetime, timedelta
+
+
+# Config, time between writing to database (seconds)
+timeperiod = 10
+
+# Setup serial
+import serial
+ser = serial.Serial('/dev/ttyACM0', 9600)
 
 # Database settings
 import MySQLdb
@@ -13,15 +19,10 @@ db = MySQLdb.connect(user=db_user, passwd=db_password, db=db_name)
 def save_to_database(value):
 	c=db.cursor()
 	command = "INSERT INTO `data` (`value`, `time`) VALUES ('"+str(median)+"','"+datetime.now().__str__()+"');"
-
 	print(command)
 	c.execute(command)	
 	db.commit()
 	c.close()
-
-ser = serial.Serial('/dev/ttyACM0', 9600)
-
-timeperiod = 10
 
 while True:
 	currentTime = datetime.now()
