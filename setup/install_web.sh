@@ -1,7 +1,10 @@
 #!bin/bash
-#sudo apt install apache2 php -y
-#sudo apt install mariadb-server php-mysql -y
-#sudo service apache2 restart
+
+sudo apt-get update
+
+sudo apt-get install apache2 php -y
+sudo apt-get install mariadb-server php-mysql -y
+sudo service apache2 restart
 
 sudo rm -r /var/www
 sudo mkdir /var/www
