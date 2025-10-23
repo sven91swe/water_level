@@ -13,9 +13,35 @@ sudo apt-get update
 sudo apt-get install git
 ```
 
-## Install web server
+## Install web server & software
 For this we will use a LAMP server per instructions here (https://projects.raspberrypi.org/en/projects/lamp-web-server-with-wordpress). Skipping the part with the Wordpress installation.
 
-Run the script install_web.sh
+Change folder to waterlevel/setup. Run
+
+```
+bash install_web.sh
+```
 
 After that go to ip address of the Raspberry Pi /info.php in a web browser to see that webserver is setup correctly.
+
+Then install needed software and python packages by running 
+
+```
+bash install_software.sh
+```
+
+## Set up database
+Change to or stay in folder waterlevel/setup. Run
+
+```
+bash setup_database.sh
+```
+
+There is no protection against causing trouble by running this twice. So make sure to just run it once.
+
+
+# DuckDNS
+Update DuckDNS script and add Cronjob using command
+```
+crontab -e
+```
