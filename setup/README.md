@@ -41,5 +41,12 @@ You can alter the default username, password, and database name in the script pr
 If you run it and then alter it you will manually need to remove the previous user and database.
 
 
-# DuckDNS or other dynamic DNS
+# Access from internet
+To be able to access the Raspberry Pi that hosts the php pages one needs to connect it to a router and to needed port forwarding on ports:
+- 80 for HTTP
+- 22 for SSH
+
+Do so at your own judgement of how secure your login to the raspberry pi is.
+
+## DuckDNS or other dynamic DNS
 I have used DuckDNS in the past, follow their instructions to set it up with a cronjob.
