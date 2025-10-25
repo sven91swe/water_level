@@ -14,6 +14,8 @@ Example from a well for temporary storage of drainage water before being pumped 
 - A current to voltage module 0-20mA
 - A dc step up converter
 
+Other components would work, especially a weaker Raspberry Pi and a smaller Ardunio. The above versions are the ones I had available and used for the project. There are potentially also HAT extensions to Raspberry PI which could do much what the other components do.
+
 <img src="documentation/liquid_level_sensor.jpg" alt="Liquid level sensor" width="200"/>
 
 The liquid level sensor, which submerges in water and is based on pressure readings.
