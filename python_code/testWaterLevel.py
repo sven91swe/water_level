@@ -9,5 +9,5 @@ ser = serial.Serial('/dev/ttyACM0', 9600)
 while True:
 	temp = ser.readline()
 	d = json.loads(temp)
-	print(d["waterlevelvoltage"])
+	print(d)
 	time.sleep(0.01)

@@ -35,9 +35,10 @@ while True:
 			data = json.loads(serialInput)
 
 			voltage = float(data["waterlevelvoltage"])
+			relayState = bool(data["relaystate"])
 
 			tempWaterLevel = int(max(voltage/2.18*100, 0))
-			print(tempWaterLevel)
+			print(f"Nivå: {tempWaterLevel}, relätillstånd: {relayState}")
 			arr = np.append(arr, tempWaterLevel)
 		except:
 			print("Unable to read input")
