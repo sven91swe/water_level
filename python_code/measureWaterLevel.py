@@ -2,10 +2,11 @@
 
 import numpy as np
 from datetime import datetime, timedelta
+import json
 
 
 # Config, time between writing to database (seconds)
-timeperiod = 10
+timeperiod = 180
 
 # Setup serial
 import serial
@@ -30,9 +31,14 @@ while True:
 	
 	while datetime.now() < currentTime + timedelta(0,timeperiod):
 		try:
-			temp = int(max(float(ser.readline())/2.18*100, 0))
-			print(temp)
-			arr = np.append(arr, temp)
+			serialInput = ser.readline()
+			data = json.loads(serialInput)
+
+			voltage = float(data["waterlevelvoltage"])
+
+			tempWaterLevel = int(max(voltage/2.18*100, 0))
+			print(tempWaterLevel)
+			arr = np.append(arr, tempWaterLevel)
 		except:
 			print("Unable to read input")
 			import time

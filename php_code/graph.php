@@ -30,6 +30,7 @@ $test = FALSE;
 if($result->num_rows > 0){
 	while($row = $result->fetch_assoc()){
 		$value = intval($row["value"]);		
+		$value = $value + 20;
 		if($value > 200){
 			$test = TRUE;
 		} elseif($value < 100 && $test){
